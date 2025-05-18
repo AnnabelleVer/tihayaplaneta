@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tihayaplaneta</title>
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="images/logo.png" alt="" width="100">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="portfolio.html">портфолио</a></li>
+                <li><a href="#FAQ">FAQ</a></li>
+            </ul>
+        </nav>
+        <div class="nav-location">г. Санкт-Петербург</div>
+    </header>
+
+
+
+
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="name">Тихонова Яна</h1>
+                    <p class="subtitle">женская фотография с атмосферой тишины</p>
+                    <div class="social-links">
+                        <a href="https://t.me/yani_mir" class="social-button">Telegram</a>
+                        <a href="https://vk.com/id124187886" class="social-button">Vkontakte</a>
+                        <a href="https://www.instagram.com/tihayaplaneta/" class="social-button">Instagram</a>
+                    </div>
+                    <a href="javascript:void(0);" class="cta-button" onclick="toggleForm()">заказать съёмку</a>
+
+                </div>
+                <div class="hero-photo">
+                    <img src="images/yana.png" alt="tihayaplaneta портрет">
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section" id="contact">
+            <h2>Записаться на съёмку</h2>
+            <form action="https://formspree.io/f/xldbzyvz" method="POST">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="email" name="email" placeholder="Ваша почта" required>
+                <textarea name="message" placeholder="Ваше сообщение..." required></textarea>
+                <button type="submit" class="submit-button">Отправить</button>
+            </form>
+        </section>
+
+
+        <section class="about-section" id="about">
+            <div class="about-image">
+                <img src="" alt="Яна Тихонова — женский фотограф" />
+            </div>
+            <div class="about-text">
+                <h2 class="about-title">ОБО МНЕ</h2>
+                <p>Я — Яна, женский фотограф из Санкт-Петербурга.</p>
+                <p>Моя съёмка — это не просто фото, это пространство, где можно быть собой.</p>
+                <p>Уже несколько лет я работаю с женщинами, помогая через объектив камеры раскрыться, почувствовать свою
+                    силу, мягкость и красоту.</p>
+                <p>Провожу как атмосферные студийные съёмки, так и фототерапию с проработкой образа и внутреннего
+                    состояния.</p>
+            </div>
+        </section>
+
+
+
+        <section class="faq-section" id="FAQ">
+            <h2 class="faq-title">Часто задаваемые вопросы</h2>
+            <div class="faq-item">
+                <button class="faq-question">Сколько длится фотосессия?<span class="arrow">▼</span></button>
+                <div class="faq-answer">
+                    <ul class="faq-list">
+                        <li><strong>📷 1 час</strong> — классическая съёмка</li>
+                        <li><strong>💄 2 часа</strong> — с визажистом или студией</li>
+                        <li><strong>✨ 2 часа + визажист + студия</strong> — полный образ</li>
+                        <li><strong>🌿 Фототерапия</strong> — 2 часа съёмки + 2 онлайн-созвона, проработка образов,
+                            мягкий подход</li>
+                    </ul>
+                    <p>Формат подбирается индивидуально — с заботой о вашем комфорте ✨</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Вы помогаете с позированием?<span class="arrow">▼</span></button>
+                <div class="faq-answer">
+                    <p>Конечно. Я всегда подсказываю, как встать, куда смотреть и как расслабиться.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Как проходит подготовка?<span class="arrow">▼</span></button>
+                <div class="faq-answer">
+                    <p>Мы заранее обсуждаем локацию, стиль, одежду. Если нужно — помогу с подбором.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Когда будут готовы фотографии?<span class="arrow">▼</span></button>
+                <div class="faq-answer">
+                    <p>Обычно в течение 7–10 дней. Другие сроки обговариваются индивидуально.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Как записаться?<span class="arrow">▼</span></button>
+                <div class="faq-answer">
+                    <p>Напишите мне в Telegram или заполните обратную форму на сайте— мы подберём удобное время и
+                        формат.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+    <script>
+        function toggleForm() {
+            const formSection = document.getElementById('contact');
+            formSection.classList.toggle('active');
+            formSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+    <script>
+        document.querySelector("form").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const name = this.querySelector('input[name="name"]').value;
+            const email = this.querySelector('input[name="email"]').value;
+            const message = this.querySelector('textarea[name="message"]').value;
+
+            const text = `📸 Новая заявка с сайта!\n\n👤 Имя: ${name}\n📧 Почта: ${email}\n💬 Сообщение: ${message}`;
+
+
+            const token = "8074072376:AAHgs8LpG9ewQppziGZFku2xeTp7_PyvNXU";
+            const chat_id = 920271779;
+
+
+            const url = `https://api.telegram.org/bot${token}/sendMessage`;
+            console.log("URL:", url);
+            console.log("chat_id:", chat_id);
+            console.log("text:", text);
+
+
+            await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    chat_id: chat_id,
+                    text: text,
+                    parse_mode: "HTML"
+                })
+            });
+
+            alert("Заявка отправлена! Спасибо 💌");
+
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

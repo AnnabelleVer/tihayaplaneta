@@ -1,0 +1,46 @@
+h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      margin-top: 60px;
+    }
+
+    .portfolio-section {
+      margin: 60px auto;
+      max-width: 1000px;
+      padding: 0 20px;
+    }
+
+    .portfolio-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #4C6B71;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 10px;
+    }
+
+    .carousel img {
+      max-height: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      scroll-snap-align: start;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel img:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 768px) {
+      .carousel img {
+        max-height: 200px;
+      }
+    }
