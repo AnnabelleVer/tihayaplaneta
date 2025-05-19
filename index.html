@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tihayaplaneta</title>
-
+    <script src="https://unpkg.com/inputmask@5.0.7/dist/inputmask.min.js"></script>
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -141,7 +141,7 @@
     </script>
     <form id="contactForm">
   <input type="text" name="name" placeholder="Ваше имя" required>
-  <input type="tel" name="phone" placeholder="Ваш номер телефона" required>
+  <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
   <textarea name="message" placeholder="Ваше сообщение..." required></textarea>
   <button type="submit">Отправить</button>
 </form>
@@ -171,6 +171,14 @@
     }
   });
 </script>
+
+<script>
+  Inputmask({ 
+    mask: "+7 (999) 999-99-99",
+    showMaskOnHover: false
+  }).mask('input[name="phone"]');
+</script>
+
 
    
 </body>
