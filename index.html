@@ -177,6 +177,31 @@
             this.reset();
         });
     </script>
+    <div id="petal-container"></div>
+
+    <script>
+        const petalContainer = document.getElementById("petal-container");
+
+        function createPetal() {
+            const petal = document.createElement("div");
+            petal.classList.add("petal");
+            petal.style.left = Math.random() * 100 + "vw";
+            petal.style.animationDuration = 3 + Math.random() * 5 + "s";
+            petal.style.opacity = Math.random();
+            petal.style.fontSize = Math.random() * 10 + 10 + "px";
+            const img = document.createElement("img");
+            img.src = "images/petal.png"; // путь к изображению лепестка
+            img.classList.add("petal");
+            petalContainer.appendChild(img);
+            petalContainer.appendChild(petal);
+
+            setTimeout(() => {
+                petal.remove();
+            }, 8000);
+        }
+
+        setInterval(createPetal, 300);
+    </script>
 </body>
 
 </html>
