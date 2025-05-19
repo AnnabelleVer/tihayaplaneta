@@ -53,7 +53,7 @@
             <h2>Записаться на съёмку</h2>
             <form action="https://formspree.io/f/xldbzyvz" method="POST">
                 <input type="text" name="name" placeholder="Ваше имя" required>
-                <input type="email" name="email" placeholder="Ваша почта" required>
+                <input type="number" name="number" placeholder="Ваш номер телефона" required>
                 <textarea name="message" placeholder="Ваше сообщение..." required></textarea>
                 <button type="submit" class="submit-button">Отправить</button>
             </form>
@@ -139,45 +139,38 @@
             });
         });
     </script>
-    <script>
-        document.querySelector("form").addEventListener("submit", async function (e) {
-            e.preventDefault();
+    <form id="contactForm">
+  <input type="text" name="name" placeholder="Ваше имя" required>
+  <input type="tel" name="phone" placeholder="Ваш номер телефона" required>
+  <textarea name="message" placeholder="Ваше сообщение..." required></textarea>
+  <button type="submit">Отправить</button>
+</form>
 
-            const name = this.querySelector('input[name="name"]').value;
-            const email = this.querySelector('input[name="email"]').value;
-            const message = this.querySelector('textarea[name="message"]').value;
+<script>
+  document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const data = {
+      name: form.name.value,
+      phone: form.phone.value,
+      message: form.message.value,
+    };
 
-            const text = `📸 Новая заявка с сайта!\n\n👤 Имя: ${name}\n📧 Почта: ${email}\n💬 Сообщение: ${message}`;
+    const res = await fetch("/api/send-to-telegram", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
 
-
-            const token = "8074072376:AAHgs8LpG9ewQppziGZFku2xeTp7_PyvNXU";
-            const chat_id = 920271779;
-
-
-            const url = `https://api.telegram.org/bot${token}/sendMessage`;
-            console.log("URL:", url);
-            console.log("chat_id:", chat_id);
-            console.log("text:", text);
-
-
-            await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    chat_id: chat_id,
-                    text: text,
-                    parse_mode: "HTML"
-                })
-            });
-
-            alert("Заявка отправлена! Спасибо 💌");
-
-            this.reset();
-        });
-    </script>
-    <div id="petal-container"></div>
+    if (res.ok) {
+      alert("Заявка отправлена! 💌");
+      form.reset();
+    } else {
+      alert("Ошибка при отправке. Попробуйте позже.");
+    }
+  });
+</script>
 
    
 </body>
