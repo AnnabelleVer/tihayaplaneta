@@ -271,14 +271,16 @@
 }
 
 .petal {
-   .petal {
-  background-image: url("images/petal.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
+    background-image: url("images/petal.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -10%;
+    animation: fall 6s linear forwards;
 }
-}
+
 
 @keyframes fall {
     0% {

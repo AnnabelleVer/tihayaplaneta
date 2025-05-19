@@ -183,20 +183,21 @@
         const petalContainer = document.getElementById("petal-container");
 
         function createPetal() {
-            const petal = document.createElement("div");
-            petal.classList.add("petal");
-            petal.style.left = Math.random() * 100 + "vw";
-            petal.style.animationDuration = 3 + Math.random() * 5 + "s";
-            petal.style.opacity = Math.random();
-            petal.style.fontSize = Math.random() * 10 + 10 + "px";
             const img = document.createElement("img");
-            img.src = ""; // путь к изображению лепестка
+            img.src = "images/petal.png"; // ← укажи правильный путь!
             img.classList.add("petal");
+            img.style.left = Math.random() * 100 + "vw";
+            img.style.animationDuration = 3 + Math.random() * 5 + "s";
+            img.style.opacity = Math.random();
+            img.style.width = "30px";
+            img.style.position = "absolute";
+            img.style.top = "-10%";
+            img.style.animation = "fall 6s linear forwards";
+
             petalContainer.appendChild(img);
-            petalContainer.appendChild(petal);
 
             setTimeout(() => {
-                petal.remove();
+                img.remove();
             }, 8000);
         }
 
