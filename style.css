@@ -259,38 +259,7 @@
     transform: rotate(180deg);
 }
 
-#petal-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 9999;
-}
 
-.petal {
-    background-image: url("images/petal.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: -10%;
-    animation: fall 6s linear forwards;
-}
-
-
-@keyframes fall {
-    0% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-    }
-}
 
 @media (max-width: 1024px) {
 

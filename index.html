@@ -179,30 +179,7 @@
     </script>
     <div id="petal-container"></div>
 
-    <script>
-        const petalContainer = document.getElementById("petal-container");
-
-        function createPetal() {
-            const img = document.createElement("img");
-            img.src = "images/petal.png"; // ← укажи правильный путь!
-            img.classList.add("petal");
-            img.style.left = Math.random() * 100 + "vw";
-            img.style.animationDuration = 3 + Math.random() * 5 + "s";
-            img.style.opacity = Math.random();
-            img.style.width = "30px";
-            img.style.position = "absolute";
-            img.style.top = "-10%";
-            img.style.animation = "fall 6s linear forwards";
-
-            petalContainer.appendChild(img);
-
-            setTimeout(() => {
-                img.remove();
-            }, 8000);
-        }
-
-        setInterval(createPetal, 300);
-    </script>
+   
 </body>
 
 </html>
