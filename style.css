@@ -271,11 +271,13 @@
 }
 
 .petal {
-    width: 20px;
-    height: auto;
-    position: absolute;
-    top: -10%;
-    animation: fall 7s linear infinite;
+   .petal {
+  background-image: url("images/petal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
 }
 
 @keyframes fall {
